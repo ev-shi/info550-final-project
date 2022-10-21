@@ -1,0 +1,72 @@
+---
+title: "Project R Markdown"
+author: "Evelyn Shi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introduction
+This data set, known as (Shelby J.) Haberman's Survival Data Set, looks at the 
+survival of patients who had undergone surgery for breast cancer. The 
+information comes from a study conducted by Billings Hospital
+at the University of Chicago from 1958 to 1970. [Haberman](https://www.habermanstatistics.com/) 
+is a statistician who was a professor at the University at the time and likely 
+compiled this data.
+
+The data can be found [here](https://www.kaggle.com/datasets/gilsousa/habermans-survival-data-set) on Kaggle. 
+
+Included in this data is:
+
+|   1. Patient age at time of operation
+|   2. Year of operation (formatted such that 1964 would be `64` in the data set)
+|   3. Number of positive axillary nodes* detected
+|   4. Survival status where: 
+|           1 = the patient survived 5 years or longer
+|           2 = the patient died within 5 years
+\
+*[Axillary nodes](https://www.komen.org/wp-content/uploads/AxillaryLymphNodes-1.pdf) 
+are lymph nodes in the underarm. They are the first place breast cancer is 
+likely to go if it spreads. During surgery, some of these nodes can be removed 
+to see if they contain cancer. 
+
+This report aims to look at the survival of patients after going surgery for 
+breast cancer. This will be done by finding the Kaplan Meier Estimate of the 
+survival function of the patients.
+
+```{r, loading-data}
+# set root directory
+here::i_am("report.Rmd")
+
+data <- readRDS(
+  file = here::here("output/cleandata.rds")
+)
+```
+
+## Tabular Analysis
+```{r, table}
+table <- readRDS(
+  file = here::here("output/table.rds")
+)
+table
+```
+\
+This table is the Kaplan Meier Curve in tabular form. The `Age` column tells us 
+the age of the patient at the time of the operation. 
+`Number of Patients at Risk` describes the number of patients who had yet to 
+undergo the surgery. `Number of Patients Who Died Within 5 Years` is, of 
+course, the number of patients who were operated on that year who died 
+within 5 years of the operation. `Probability of Survival` caluclates the 
+probability of survival after the breast cancer surgery, followed by a 
+`Standard Error` and Confidence Interval. 
+
+## Kaplan-Meier Curve
+```{r, Kaplan-Meier Curve}
+knitr::include_graphics(
+  here::here("output/survival.png")
+)
+```
+\
+In this plot, the y-axis represents survival probability and the x-axis is 
+age at time of breast surgery operation. The dark line is the Kaplan-Meier 
+estimate of the survival curve, while the dotted lines are the confidence 
+intervals for that estimate. 

@@ -44,6 +44,16 @@ contain `cleandata.rds`, `table.rds`, and `survival.png`
 7) raw_data folder
 - includes the raw haberman.csv data
 
+8) renv folder
+- includes all the R package information
+
+9) renv.lock
+- records which R packages are used here, what version...
+
+### How to Synchronize the Package Repository
+
+In the terminal, type `make install` to synchronize your library with the lockfile (renv.lock)!
+
 ### How to Generate the Final Report
 
 In your terminal, type `make` or `make report.html` and `report.html` should be 

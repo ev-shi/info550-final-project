@@ -14,3 +14,7 @@ output/survival.png: code/02_make_figure.R output/cleandata.rds
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f output/*.png && rm -f *.html
+
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"

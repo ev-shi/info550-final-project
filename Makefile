@@ -32,5 +32,6 @@ pull_image:
 	docker pull evshi/final_report
 
 # Building the report automatically in our container
+.PHONY: final_report
 final_report:
 	docker run -v "/$$(pwd)/final_report":/project/final_report evshi/final_report

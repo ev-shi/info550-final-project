@@ -48,13 +48,19 @@ contain `cleandata.rds`, `table.rds`, and `survival.png`
 - includes all the R package information
 
 9) renv.lock
-- records which R packages are used here, what version...
+- records which R packages are used here, what version, etc
 
-### How to Synchronize the Package Repository
+10) Dockerfile
+- used to build the image
 
-In the terminal, type `make install` to synchronize your library with the lockfile (renv.lock)!
+### Building the docker image
+
+Building the docker image can be done by typing `make project_image` or 
+`make pull_image` in your terminal. The former builds the image  
+locally and takes longer whereas the latter pulls the image from 
+Dockerhub (link [here](https://hub.docker.com/repository/docker/evshi/final_report)) 
+and is faster. Feel free to do either!
 
 ### How to Generate the Final Report
-
-In your terminal, type `make` or `make report.html` and `report.html` should be 
-created in the main project folder!
+The final report is then made by typing `make final_report` in your terminal. 
+The resulting html file will be found in a folder called "report".

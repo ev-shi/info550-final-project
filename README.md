@@ -56,7 +56,7 @@ contain `cleandata.rds`, `table.rds`, and `survival.png`
 ### Building the docker image
 
 Building the docker image can be done by typing `make project_image` or 
-`make pull_image` in your terminal. The former builds the image  
+`make pull_image` in your terminal. The former builds the image 
 locally and takes longer whereas the latter pulls the image from 
 Dockerhub (link [here](https://hub.docker.com/repository/docker/evshi/final_report)) 
 and is faster. Feel free to do either!

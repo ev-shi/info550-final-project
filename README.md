@@ -53,6 +53,9 @@ contain `cleandata.rds`, `table.rds`, and `survival.png`
 10) Dockerfile
 - used to build the image
 
+11) final_report
+- A folder (currently empty) that the final report will build to!
+
 ### Building the docker image
 
 Building the docker image can be done by typing `make project_image` or 

@@ -63,4 +63,4 @@ and is faster. Feel free to do either!
 
 ### How to Generate the Final Report
 The final report is then made by typing `make final_report` in your terminal. 
-The resulting html file will be found in a folder called "report".
+The resulting html file will be found in a folder called "final_report".
